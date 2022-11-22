@@ -1,4 +1,4 @@
-const token = '5613323159:AAFqsxDups7pFMWJBYEoSkhnVD8p9vX55xY'
+const token = '5'
 const TelegramApi = require('node-telegram-bot-api')
 const { board_nach } = require('./markups')
 const { board_reg } = require('./markups')
