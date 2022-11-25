@@ -1,4 +1,3 @@
-const token = '56'
 const TelegramApi = require('node-telegram-bot-api')
 const { board_nach } = require('./markups')
 const { board_reg } = require('./markups')
@@ -24,9 +23,16 @@ const start = async () =>{
                 where: {user_id: chatId, name: nm},
             });
             console.log(created)
+            if(user.action === true){
+                await bot.sendSticker(chatId, 'https://chpic.su/_data/stickers/l/letovopros/letovopros_007.webp')
+                await bot.sendMessage(chatId, 'Вас приветствует бот Verum' +
+                '\nЧем займемся в первую очередь?', board_reg) 
+            }else{
                 await bot.sendSticker(chatId, 'https://chpic.su/_data/stickers/l/letovopros/letovopros_007.webp')
                 await bot.sendMessage(chatId, 'Вас приветствует бот Verum' +
                 '\nЧем займемся в первую очередь?', board_nach)  
+            }
+
         }            
         if (text === '/info'){
             const user = await User.findByPk(chatId)
