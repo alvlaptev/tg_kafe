@@ -1,8 +1,8 @@
 const {Sequelize} = require('sequelize')
 
 module.exports = new Sequelize(
-    'alex',
-    'alex',
+    'gino',
+    'postgres',
     '3695',
     {
         host: '127.0.0.1',
